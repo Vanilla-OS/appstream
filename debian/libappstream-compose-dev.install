@@ -1,0 +1,4 @@
+usr/include/appstream-compose/*
+usr/lib/*/libappstream-compose.so
+usr/lib/*/pkgconfig/appstream-compose.pc
+usr/share/gir-1.0/AppStreamCompose-1.0.gir

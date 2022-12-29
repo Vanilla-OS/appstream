@@ -1,0 +1,3 @@
+usr/libexec/appstreamcli-compose
+usr/share/man/man1/appstreamcli-compose.1
+usr/share/metainfo/org.freedesktop.appstream.compose.metainfo.xml

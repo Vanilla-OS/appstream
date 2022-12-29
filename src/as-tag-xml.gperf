@@ -1,0 +1,54 @@
+%language=ANSI-C
+%enum
+%define hash-function-name _as_xml_tag_hash
+%define lookup-function-name _as_xml_tag_from_gperf
+%define string-pool-name xml_tag_stringpool
+%readonly-tables
+%includes
+%pic
+%struct-type
+struct xml_tag_data { int name; unsigned int etag; };
+%%
+id, AS_TAG_ID
+pkgname, AS_TAG_PKGNAME
+source_pkgname, AS_TAG_SOURCE_PKGNAME
+name, AS_TAG_NAME
+summary, AS_TAG_SUMMARY
+description, AS_TAG_DESCRIPTION
+icon, AS_TAG_ICON
+url, AS_TAG_URL
+categories, AS_TAG_CATEGORIES
+keywords, AS_TAG_KEYWORDS
+mimetypes, AS_TAG_MIMETYPES
+provides, AS_TAG_PROVIDES
+requires, AS_TAG_REQUIRES
+recommends, AS_TAG_RECOMMENDS
+supports, AS_TAG_SUPPORTS
+replaces, AS_TAG_REPLACES
+extends, AS_TAG_EXTENDS
+screenshots, AS_TAG_SCREENSHOTS
+metadata_license, AS_TAG_METADATA_LICENSE
+project_license, AS_TAG_PROJECT_LICENSE
+project_group, AS_TAG_PROJECT_GROUP
+developer_name, AS_TAG_DEVELOPER_NAME
+compulsory_for_desktop, AS_TAG_COMPULSORY_FOR_DESKTOP
+releases, AS_TAG_RELEASES
+languages, AS_TAG_LANGUAGES
+launchable, AS_TAG_LAUNCHABLE
+bundle, AS_TAG_BUNDLE
+translation, AS_TAG_TRANSLATION
+suggests, AS_TAG_SUGGESTS
+custom, AS_TAG_CUSTOM
+content_rating, AS_TAG_CONTENT_RATING
+agreement, AS_TAG_AGREEMENT
+reviews, AS_TAG_REVIEWS
+name_variant_suffix, AS_TAG_NAME_VARIANT_SUFFIX
+tags, AS_TAG_TAGS
+branding, AS_TAG_BRANDING
+p, AS_TAG_P
+li, AS_TAG_LI
+ul, AS_TAG_UL
+ol, AS_TAG_OL
+_asi_scope, AS_TAG_INTERNAL_SCOPE
+_asi_origin, AS_TAG_INTERNAL_ORIGIN
+_asi_branch, AS_TAG_INTERNAL_BRANCH

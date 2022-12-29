@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+#export DH_VERBOSE=1
+
+ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armel armhf i386 mips64el mipsel ppc64el s390x powerpc ppc64 riscv64 sparc64 x32))
+ENABLE_COMPOSE=-Dcompose=true
+else
+ENABLE_COMPOSE=-Dcompose=false
+endif
+
+AS_CONFIGURE_ARGS = -Dqt=true \
+		-Dapt-support=false \
+		$(ENABLE_COMPOSE) \
+		-Dvapi=true
+
+%:
+	dh $@ --with gir
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(AS_CONFIGURE_ARGS)
+
+override_dh_missing:
+	dh_missing --fail-missing

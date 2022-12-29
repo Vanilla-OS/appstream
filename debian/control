@@ -1,0 +1,238 @@
+Source: appstream
+Section: admin
+Priority: optional
+Maintainer: Matthias Klumpp <mak@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               gettext,
+               gobject-introspection,
+               gperf,
+               gtk-doc-tools,
+               itstool,
+               libcairo2-dev,
+               libcurl4-gnutls-dev | libcurl-dev (>= 7.62),
+               libfontconfig-dev,
+               libgdk-pixbuf-2.0-dev,
+               libgirepository1.0-dev (>= 1.62),
+               libglib2.0-dev (>= 2.62),
+               libjs-highlight.js,
+               libpango1.0-dev,
+               librsvg2-dev (>= 2.48) [amd64 arm64 armel armhf i386 mips64el mipsel ppc64el s390x powerpc ppc64 riscv64 sparc64 x32],
+               libstemmer-dev,
+               libxml2-dev,
+               libxmlb-dev (>= 0.3.6),
+               libyaml-dev,
+               meson (>= 0.62),
+               qtbase5-dev,
+               valac
+Rules-Requires-Root: no
+Standards-Version: 4.6.0
+Homepage: https://www.freedesktop.org/wiki/Distributions/AppStream/
+Vcs-Git: https://salsa.debian.org/pkgutopia-team/appstream.git
+Vcs-Browser: https://salsa.debian.org/pkgutopia-team/appstream
+
+Package: appstream
+Architecture: any
+Depends: shared-mime-info,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Software component metadata management
+ AppStream is a metadata specification which permits software components to
+ provide information about themselves to automated systems and end-users
+ before the software is actually installed.
+ The AppStream project provides facilities to easily access and transform
+ this metadata, as well as a few additional services to allow building
+ feature-rich software centers and similar applications.
+ .
+ This package provides tools to generate, maintain and query the AppStream
+ data pool of installed and available software, and enables integration
+ with the APT package manager.
+ .
+ The 'appstreamcli' tool can be used for accessing the software component
+ pool as well as for working with AppStream metadata directly, including
+ validating it for compliance with the specification.
+
+Package: appstream-compose
+Architecture: amd64 arm64 armel armhf i386 mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sparc64 x32
+Depends: appstream,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: ffmpeg,
+            optipng
+Replaces: appstream (<< 0.15.2)
+Breaks: appstream (<< 0.15.2)
+Description: Compose metadata collections from directory trees
+ AppStream is a metadata specification which permits software components to
+ provide information about themselves to automated systems and end-users
+ before the software is actually installed.
+ This permits informative displays of new applications to users in software
+ centers, as well as allowing a system to make decisions on which new software
+ a user might want to install (e.g. missing firmware or media handlers).
+ .
+ This package extends the `appstreamcli` utility with a `compose` subcommand
+ to generate AppStream metadata and media files from directory trees.
+
+Package: libappstream4
+Architecture: any
+Section: libs
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: Library to access AppStream services
+ AppStream is a metadata specification which permits software components to
+ provide information about themselves to automated systems and end-users
+ before the software is actually installed.
+ This permits informative displays of new applications to users in software
+ centers, as well as allowing a system to make decisions on which new software
+ a user might want to install (e.g. missing firmware or media handlers).
+ .
+ This package contains a GObject-based library to access AppStream
+ services, like the software component metadata pool.
+ It also contains functions for reading, writing and transforming AppStream
+ metadata.
+
+Package: libappstream-dev
+Architecture: any
+Section: libdevel
+Multi-Arch: same
+Depends: gir1.2-appstream-1.0 (= ${binary:Version}),
+         libappstream4 (= ${binary:Version}),
+         libglib2.0-dev,
+         ${misc:Depends}
+Description: Library to access AppStream services (development files)
+ AppStream is a metadata specification which permits software components to
+ provide information about themselves to automated systems and end-users
+ before the software is actually installed.
+ This permits informative displays of new applications to users in software
+ centers, as well as allowing a system to make decisions on which new software
+ a user might want to install (e.g. missing firmware or media handlers).
+ .
+ This package contains development files necessary to develop
+ software management tools which use the AppStream library.
+
+Package: gir1.2-appstream-1.0
+Architecture: any
+Section: introspection
+Multi-Arch: same
+Depends: libappstream4 (= ${binary:Version}),
+         ${gir:Depends},
+         ${misc:Depends}
+Description: Library to access AppStream services (introspection data)
+ AppStream is a metadata specification which permits software components to
+ provide information about themselves to automated systems and end-users
+ before the software is actually installed.
+ This permits informative displays of new applications to users in software
+ centers, as well as allowing a system to make decisions on which new software
+ a user might want to install (e.g. missing firmware or media handlers).
+ .
+ This package contains introspection data for the AppStream library.
+
+Package: libappstreamqt2
+Architecture: any
+Section: libs
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: Qt5 library to access AppStream services
+ AppStream is a metadata specification which permits software components to
+ provide information about themselves to automated systems and end-users
+ before the software is actually installed.
+ This permits informative displays of new applications to users in software
+ centers, as well as allowing a system to make decisions on which new software
+ a user might want to install (e.g. missing firmware or media handlers).
+ .
+ This package contains a Qt-based library to access AppStream
+ services, like the software component metadata pool.
+
+Package: libappstreamqt-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: libappstreamqt2 (= ${binary:Version}),
+         qtbase5-dev,
+         ${misc:Depends}
+Description: Qt5 library to access AppStream services (development files)
+ AppStream is a metadata specification which permits software components to
+ provide information about themselves to automated systems and end-users
+ before the software is actually installed.
+ This permits informative displays of new applications to users in software
+ centers, as well as allowing a system to make decisions on which new software
+ a user might want to install (e.g. missing firmware or media handlers).
+ .
+ This package contains development files necessary to develop
+ software management tools which use the Qt-based AppStream library.
+
+Package: libappstream-compose0
+Architecture: amd64 arm64 armel armhf i386 mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sparc64 x32
+Section: libs
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: Building blocks to compose AppStream metadata
+ AppStream is a metadata specification which permits software components to
+ provide information about themselves to automated systems and end-users
+ before the software is actually installed.
+ This permits informative displays of new applications to users in software
+ centers, as well as allowing a system to make decisions on which new software
+ a user might want to install (e.g. missing firmware or media handlers).
+ .
+ This package contains a GObject-based library of high-level functions
+ to compose AppStream metadata and auxiliary data (like font renderings,
+ icons, etc.).
+
+Package: libappstream-compose-dev
+Architecture: amd64 arm64 armel armhf i386 mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sparc64 x32
+Section: libdevel
+Multi-Arch: same
+Depends: gir1.2-appstreamcompose-1.0 (= ${binary:Version}),
+         libappstream-compose0 (= ${binary:Version}),
+         libappstream-dev (= ${binary:Version}),
+         libgdk-pixbuf2.0-dev,
+         ${misc:Depends}
+Suggests: appstream-generator
+Description: Building blocks to compose AppStream metadata (development files)
+ AppStream is a metadata specification which permits software components to
+ provide information about themselves to automated systems and end-users
+ before the software is actually installed.
+ This permits informative displays of new applications to users in software
+ centers, as well as allowing a system to make decisions on which new software
+ a user might want to install (e.g. missing firmware or media handlers).
+ .
+ This package contains development files necessary to develop applications
+ using the AppStream compose library.
+
+Package: gir1.2-appstreamcompose-1.0
+Architecture: amd64 arm64 armel armhf i386 mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sparc64 x32
+Section: introspection
+Multi-Arch: same
+Depends: libappstream-compose0 (= ${binary:Version}),
+         ${gir:Depends},
+         ${misc:Depends}
+Description: Building blocks to compose AppStream metadata (introspection data)
+ AppStream is a metadata specification which permits software components to
+ provide information about themselves to automated systems and end-users
+ before the software is actually installed.
+ This permits informative displays of new applications to users in software
+ centers, as well as allowing a system to make decisions on which new software
+ a user might want to install (e.g. missing firmware or media handlers).
+ .
+ This package contains introspection data for the AppStream compose library.
+
+Package: appstream-doc
+Architecture: all
+Multi-Arch: foreign
+Section: doc
+Depends: libjs-highlight.js,
+         ${misc:Depends}
+Suggests: appstream
+Description: Developer documentation for AppStream
+ AppStream is a metadata specification which permits software components to
+ provide information about themselves to automated systems and end-users
+ before the software is actually installed.
+ This permits informative displays of new applications to users in software
+ centers, as well as allowing a system to make decisions on which new software
+ a user might want to install (e.g. missing firmware or media handlers).
+ .
+ This package provides developer documentation for AppStream.

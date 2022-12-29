@@ -1,0 +1,7 @@
+# AppStream has some sample and dummy metainfo files, some of them
+# erroneous on purpose, for its own testsuite.
+# Make Lintian not complain about these.
+appstream source: inconsistent-appstream-metadata-license tests/*
+
+# false positive: the sources are provided
+appstream source: source-is-missing [docs/html/*]
