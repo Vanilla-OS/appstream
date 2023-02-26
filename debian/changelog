@@ -1,3 +1,9 @@
+appstream (0.15.5-1vanilla3)  lunar; urgency=medium
+
+  * disable apt-support
+
+ -- Mirko Brombin <send@mirko.pm>  Thu, 01 Dec 2022 22:10:48 +0530
+
 appstream (0.15.5-1vanilla2)  kinetic; urgency=medium
 
   * disable apt-support
