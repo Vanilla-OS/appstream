@@ -1,5 +1,10 @@
+<div align="center">
+
 AppStream
 =========
+ 
+ </div>
+ 
 <img align="right" src="docs/images/src/png/appstream-logo.png">
 
 AppStream is a collaborative effort for making machine-readable software metadata easily available to programs that need it.
@@ -14,11 +19,11 @@ repositories (primarily in Linux distributions).
 This reference implementation of AppStream provides a shared library to work with these metadata files, features to index and query their
 data quickly, as well as other useful related functionality to make building programs which work with software metadata very easy.
 
-This repository contains:
- * the AppStream specification
- * the `appstreamcli` utility to access and edit metadata, manipulate caches, show diagnostic information, etc. (see `man appstreamcli`)
- * a GLib/GObject based library for reading and writing AppStream metadata in XML and YAML, accessing the system data pool, and auxiliary functionality
- * a Qt5 based library for accessing AppStream
+**This repository contains:**
+ * The AppStream specification
+ * The `appstreamcli` utility to access and edit metadata, manipulate caches, show diagnostic information, etc. (see `man appstreamcli`)
+ * A GLib/GObject based library for reading and writing AppStream metadata in XML and YAML, accessing the system data pool, and auxiliary functionality
+ * A Qt5 based library for accessing AppStream
 
 ## Useful Links
 [AppStream Documentation](https://www.freedesktop.org/software/appstream/docs/) - The AppStream specification and help
@@ -38,6 +43,7 @@ If you are a (Linux) distributor or owner of a software repository you want to g
 you may want to take a look at the [AppStream Generator](https://github.com/ximion/appstream-generator) project.
 
 ## Developers
+
 ![Build Test](https://github.com/ximion/appstream/workflows/Build%20Test/badge.svg)
 [![Translation status](https://hosted.weblate.org/widgets/appstream/-/svg-badge.svg)](https://hosted.weblate.org/engage/appstream/?utm_source=widget)
 
